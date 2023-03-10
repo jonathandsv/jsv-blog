@@ -1,6 +1,10 @@
+using Westwind.AspNetCore.Markdown;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddMarkdown();
+builder.Services.AddMvc().AddApplicationPart(typeof(MarkdownPageProcessorMiddleware).Assembly);
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -14,6 +18,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseMarkdown();
 app.UseStaticFiles();
 
 app.UseRouting();
