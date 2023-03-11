@@ -39,6 +39,25 @@ pre {
     word-wrap: normal;
 }
 
-    pre > code {
-        white-space: pre;
+pre > code {
+    white-space: pre;
+}
+
+
+#up-button {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 47px;
+    right: 41px;
+    font-size: 30px;
+    color: #4e4848;
+    border-radius: 100%;
+    border: 1px solid #4e4848;
+    cursor: pointer
+}
+
+    #up-button:hover {
+        color: #fff;
+        background: #4e4848
     }
