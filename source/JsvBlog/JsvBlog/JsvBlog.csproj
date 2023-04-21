@@ -11,4 +11,8 @@
     <PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.10.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\JsvBlog.Data\JsvBlog.Data.csproj" />
+  </ItemGroup>
+
 </Project>

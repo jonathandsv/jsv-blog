@@ -1,3 +1,4 @@
+using JsvBlog.Extensions;
 using Westwind.AspNetCore.Markdown;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddMarkdown();
 builder.Services.AddMvc().AddApplicationPart(typeof(MarkdownPageProcessorMiddleware).Assembly);
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDataBase(builder.Configuration);
 
 var app = builder.Build();
 
