@@ -7,8 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddMarkdown();
 builder.Services.AddMvc().AddApplicationPart(typeof(MarkdownPageProcessorMiddleware).Assembly);
 builder.Services.AddControllersWithViews();
+builder.Services.AddAutoMapperSetup();
 
 builder.Services.AddDataBase(builder.Configuration);
+JsvBlog.IoC.IoCConfiguration.Configure(builder.Services);
 
 var app = builder.Build();
 

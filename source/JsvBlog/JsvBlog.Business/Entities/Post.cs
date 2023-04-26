@@ -26,6 +26,7 @@ namespace JsvBlog.Business.Entities
         public DateTime PubDate { get; set; }
         public DateTime LastModified { get; set; }
         public string Slug { get; set; } = string.Empty;
+        public string UrlContent { get; set; }
 
         public ICollection<Category> Categories { get; set; }
         public ICollection<Tag> Tags { get; set; }

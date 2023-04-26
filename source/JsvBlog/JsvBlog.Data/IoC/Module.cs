@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JsvBlog.Business.IoC
+namespace JsvBlog.Data.IoC
 {
     public static class Module
     {
@@ -12,7 +12,7 @@ namespace JsvBlog.Business.IoC
         {
             var dic = new Dictionary<Type, Type>();
 
-            dic.Add(typeof(Interfaces.IBlogService), typeof(Services.BlogService));
+            dic.Add(typeof(Business.Interfaces.IBlogRepository), typeof(BlogRepository));
             return dic;
         }
     }

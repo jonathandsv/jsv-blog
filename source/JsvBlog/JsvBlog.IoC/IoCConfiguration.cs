@@ -12,7 +12,8 @@ namespace JsvBlog.IoC
     {
         public static void Configure(IServiceCollection services)
         {
-            Configure(services, Module.GetType());
+            Configure(services, JsvBlog.Business.IoC.Module.GetTypes());
+            Configure(services, JsvBlog.Data.IoC.Module.GetTypes());
         }
         private static void Configure(IServiceCollection services, Dictionary<Type, Type> types)
         {
