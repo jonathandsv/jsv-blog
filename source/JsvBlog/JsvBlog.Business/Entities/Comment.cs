@@ -1,5 +1,8 @@
-﻿namespace JsvBlog.Business.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace JsvBlog.Business.Entities
 {
+    [Table("Comment")]
     public class Comment
     {
         public Guid Id { get; set; }

@@ -10,9 +10,10 @@ namespace JsvBlog.Extensions
             string connectionString = configuration.GetConnectionString("BLOGDB");
             services.AddDbContext<BlogContext>(options =>
                 options
-                .UseSqlServer(connectionString)
+                .UseSqlServer(connectionString, x=> x.MigrationsAssembly("JsvBlog.Data"))
                 .LogTo(Console.WriteLine, LogLevel.Information)
-                .EnableSensitiveDataLogging());
+                .EnableSensitiveDataLogging()
+                );
         }
     }
 }
