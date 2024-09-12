@@ -1,4 +1,6 @@
-﻿using JsvBlog.Models;
+﻿using JsvBlog.Business.Interfaces;
+using JsvBlog.Business.ViewModels;
+using JsvBlog.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,14 +9,17 @@ namespace JsvBlog.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IBlogService _blogService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IBlogService blogService)
         {
             _logger = logger;
+            _blogService = blogService;
         }
 
-        public IActionResult Index()
+        public async IActionResult Index()
         {
+            List<PostViewModel> result = await _blogService.GetAllPostsAsync();
             return View();
         }
 

@@ -4,5 +4,6 @@ namespace JsvBlog.Business.Interfaces;
 
 public interface IPostRepository
 {
+    Task GetAllPostAsync();
     Task<Post> GetPostBySlug(string slug);
 }
