@@ -1,7 +1,7 @@
 ﻿using JsvBlog.Business.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace JsvBlog.Data;
+namespace JsvBlog.Data.EF;
 
 public partial class BlogContext : DbContext
 {

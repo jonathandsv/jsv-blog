@@ -1,4 +1,4 @@
-﻿using JsvBlog.Data;
+﻿using JsvBlog.Data.EF;
 using Microsoft.EntityFrameworkCore;
 
 namespace JsvBlog.Extensions

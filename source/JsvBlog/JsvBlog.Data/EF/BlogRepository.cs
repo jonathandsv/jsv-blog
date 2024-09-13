@@ -1,6 +1,6 @@
 ﻿using JsvBlog.Business.Interfaces;
 
-namespace JsvBlog.Data;
+namespace JsvBlog.Data.EF;
 
 public class BlogRepository : IBlogRepository
 {

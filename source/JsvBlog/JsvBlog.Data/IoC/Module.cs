@@ -1,4 +1,6 @@
 ﻿using JsvBlog.Business.Interfaces;
+using JsvBlog.Data.EF;
+using JsvBlog.Data.File;
 
 namespace JsvBlog.Data.IoC;
 
@@ -8,8 +10,8 @@ public static class Module
     {
         var dic = new Dictionary<Type, Type>();
 
-        dic.Add(typeof(Business.Interfaces.IBlogRepository), typeof(BlogRepository));
-        dic.Add(typeof(Business.Interfaces.IPostRepository), typeof(PostRepository));
+        dic.Add(typeof(IBlogRepository), typeof(BlogRepository));
+        dic.Add(typeof(IPostRepository), typeof(PostFileRepository));
         return dic;
     }
 }

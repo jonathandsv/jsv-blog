@@ -1,4 +1,7 @@
+using JsvBlog.Business.Interfaces;
+using JsvBlog.Data.File;
 using JsvBlog.Extensions;
+using System.Net.Http.Headers;
 using Westwind.AspNetCore.Markdown;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +14,12 @@ builder.Services.AddAutoMapperSetup();
 
 builder.Services.AddDataBase(builder.Configuration);
 JsvBlog.IoC.IoCConfiguration.Configure(builder.Services);
+
+builder.Services.AddHttpClient<IPostRepository, PostFileRepository>(client =>
+{
+    client.DefaultRequestHeaders.Accept.Clear();
+    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+});
 
 var app = builder.Build();
 
