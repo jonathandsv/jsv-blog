@@ -1,7 +1,3 @@
-﻿namespace JsvBlog.Business.ViewModels
-{
-    public class TagViewModel
-    {
+﻿namespace JsvBlog.Business.ViewModels;
 
-    }
-}
+public record TagViewModel(Guid Id, string Descricao);

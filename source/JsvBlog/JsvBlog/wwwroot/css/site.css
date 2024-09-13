@@ -43,7 +43,7 @@ pre > code {
     white-space: pre;
 }
 
-
+/*Start button back-to-top*/
 #up-button {
     width: 50px;
     height: 50px;
@@ -54,10 +54,42 @@ pre > code {
     color: #4e4848;
     border-radius: 100%;
     border: 1px solid #4e4848;
-    cursor: pointer
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-    #up-button:hover {
-        color: #fff;
-        background: #4e4848
-    }
+#up-button:hover {
+    color: #ffffff;
+    background: #4e4848;
+}
+
+#up-button:hover .arrow-up {
+    border-left-color: white;
+    border-bottom-color: white;
+}
+
+/*.circle-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    cursor: pointer;
+    outline: none;
+}*/
+
+.arrow-up {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid #333;
+    border-bottom: 2px solid #333;
+    transform: rotate(135deg);
+    margin-top: -2px;
+}
+/*End button back-to-top*/

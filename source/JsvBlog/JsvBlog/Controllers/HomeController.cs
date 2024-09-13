@@ -1,5 +1,4 @@
 ﻿using JsvBlog.Business.Interfaces;
-using JsvBlog.Business.ViewModels;
 using JsvBlog.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -17,10 +16,10 @@ namespace JsvBlog.Controllers
             _blogService = blogService;
         }
 
-        public async IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            List<PostViewModel> result = await _blogService.GetAllPostsAsync();
-            return View();
+            var result = await _blogService.GetAllPostsAsync();
+            return View(result);
         }
 
         public IActionResult Privacy()

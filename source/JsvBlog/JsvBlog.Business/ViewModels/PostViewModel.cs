@@ -20,8 +20,8 @@ namespace JsvBlog.Business.ViewModels
         public string Slug { get; set; } = string.Empty;
         public string UrlContent { get; set; } = string.Empty;
 
-        public List<CategoryViewModel> Categories { get; set; }
-        public List<TagViewModel> Tags { get; set; }
+        public IEnumerable<CategoryViewModel> Categories { get; set; }
+        public IEnumerable<TagViewModel> Tags { get; set; }
         public List<CommentViewModel> Comments { get; set; }
     }
 }

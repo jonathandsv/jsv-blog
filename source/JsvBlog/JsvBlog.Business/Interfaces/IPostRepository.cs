@@ -1,9 +1,10 @@
 ﻿using JsvBlog.Business.Entities;
+using JsvBlog.Business.ViewModels;
 
 namespace JsvBlog.Business.Interfaces;
 
 public interface IPostRepository
 {
-    Task GetAllPostAsync();
+    Task<List<PostViewModel>> GetAllPostAsync();
     Task<Post> GetPostBySlug(string slug);
 }

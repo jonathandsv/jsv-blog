@@ -14,15 +14,27 @@ public class PostRepository : IPostRepository
         _blogContext = blogContext;
     }
 
-    public async Task GetAllPostAsync()
+    public async Task<List<PostViewModel>> GetAllPostAsync()
     {
-        var result = await _blogContext.Posts
+        return await _blogContext.Posts
             .Select(x => new PostViewModel()
             {
                 Id = x.Id,
-                Content = x.Content
+                Title = x.Title,
+                Content = x.Content,
+                Excerpt = x.Excerpt,
+                IsPublished = x.IsPublished,
+                CreateDate = x.CreateDate,
+                PubDate = x.PubDate,
+                LastModified = x.LastModified,
+                Slug = x.Slug,
+                UrlContent = x.UrlContent,
+                Categories = x.Categories
+                    .Select(cat => new 
+                        CategoryViewModel(cat.Id, cat.Descricao)),
+                Tags = x.Tags.Select(tag => new 
+                    TagViewModel(tag.Id, tag.Descricao))
             }).ToListAsync();
-        return result;
     }
 
     public async Task<Post?> GetPostBySlug(string slug)

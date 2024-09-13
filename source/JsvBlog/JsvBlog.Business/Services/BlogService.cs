@@ -20,5 +20,6 @@ public class BlogService : IBlogService
     public async  Task<List<PostViewModel>> GetAllPostsAsync()
     {
         var result = await _postRepository.GetAllPostAsync();
+        return result;
     }
 }
