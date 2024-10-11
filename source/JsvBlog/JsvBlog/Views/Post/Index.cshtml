@@ -10,7 +10,7 @@
     <div class="col-md-8">
         <article class="blog-post">
             <h2 class="blog-post-title">@Model.Title</h2>
-            <p class="blog-post-meta">@Model.PubDate.ToString("dd/MM/yyyy") by <a href="#">Jonathan Vieira</a></p>
+            <p class="blog-post-meta">@Model.PubDate.ToString("dd/MM/yyyy") by <a href="https://github.com/jonathandsv">Jonathan Vieira</a></p>
             <hr>
             @Markdown.ParseHtmlStringFromUrl(Model.UrlContent)
         </article>
@@ -26,7 +26,7 @@
         <div class="position-sticky" style="top: 2rem;">
             <div class="p-4 mb-3 bg-light rounded d-flex flex-column align-items-center">
                 <img src="https://avatars.githubusercontent.com/u/37315741?s=400&u=0c42a1a5ac64fb1b18d84cba95582d266bc7eed0&v=4" alt="Avatar" class="avatar">
-                <h4 class="fst-italic">Jonathan Vieira</h4>
+                <h4>Jonathan Vieira</h4>
                 <p class="mb-0">
                     Atuo como desenvolvedor de software focado principalmente com .Net, Angular, Oracle Db, SqlServer. 
                     E sempre testando tecnologias ao redor como Node, React, Elixir dentre outras.
@@ -35,24 +35,14 @@
             </div>
 
             <div class="p-4">
-                <h4 class="fst-italic">Relevant</h4>
+                <h4>Relevant</h4>
                 <ol class="list-unstyled mb-0">
-                    <li><a style="color:grey" href="#">Priority Queue</a></li>
-                    <li><a style="color:grey" href="#">Implicit Operators in C#</a></li>
-                    <li><a style="color:grey" href="#">ASP.NET 5 – Autentication and Autorization with Bearer and JWT</a></li>
-                    <li><a style="color:grey" href="#">Clean Code - Guia e Exemplos</a></li>
-                    <li><a style="color:grey" href="#">How To Create Docker Image Of .NET 6 Workloads And Push It To Google Container Registry</a></li>
-                    @* <li><a style="color:grey" href="#">Customize Modern SharePoint List Forms using JSON</a></li>
-                    <li><a style="color:grey" href="#">Use Of Text Web Part In SharePoint Online</a></li>
-                    <li><a style="color:grey" href="#">C# 11- Pattern Matching On Span For Constant String</a></li>
-                    <li><a style="color:grey" href="#">Hello World In Fast API Python</a></li>
-                    <li><a style="color:grey" href="#">Step By Step Process To Create A Power Platform Solution</a></li>
-                    <li><a style="color:grey" href="#">	Create Generic HttpClient Call Function With Error Handling In C#</a></li> *@
+                    <li><a style="color:grey" href="/post/@Model.Slug">@Model.Title</a></li>
                 </ol>
             </div>
 
             <div class="p-4">
-                <h4 class="fst-italic">Elsewhere</h4>
+                <h4>Elsewhere</h4>
                 <ol class="list-unstyled">
                     <li><a target="_blank" href="https://github.com/jonathandsv">GitHub</a></li>
                     <li><a target="_blank" href="https://www.linkedin.com/in/jonathan-souza-vieira/">LinkedIn</a></li>
